@@ -7,11 +7,24 @@
   position: relative;
 }
 
-.post-body .comment-no {
-  display: inline-block;
-  padding: 5px 10px;
+.post-body .no-wrap {
+  display: flex;
   position: absolute;
   bottom: 20px;
-  right: 10px;
+  width: auto;
+  right: 20px;
+}
+
+.post-body .comment-no, .post-body .like-no {
+  display: block;
+  padding: 5px 10px;
   background-color: rgba(0, 0, 0, .1);
+}
+
+.post-body .like-no {
+  margin-right: 10px;
+}
+
+.post-body .like-no:hover {
+  cursor: pointer;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import store from './redux/store'
 import './comment-box.css'
+import { connect } from 'react-redux'
 
 class CommentBox extends Component {
 
@@ -13,7 +14,7 @@ class CommentBox extends Component {
   }
 
   render(){
-    let commentList = store.getState().reverse().map((item, i) => (
+    let commentList = this.props.comments.reverse().map((item, i) => (
       <li key={i}>{item}</li>
     ))
 
@@ -36,4 +37,8 @@ class CommentBox extends Component {
   }
 }
 
-export default CommentBox
+const mapStateToProps = (state) => ({
+  comments: state
+})
+
+export default connect(mapStateToProps)(CommentBox)
